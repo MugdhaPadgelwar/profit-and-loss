@@ -20,18 +20,18 @@ function calculateProfitAndLoss(initial, quantity, current) {
     const loss = (initial - current) * quantity;
     const lossPercent = (loss / initial) * 100;
     output.innerText =
-      "your are in loss, current loss is " +
+      "You are in loss, current loss is " +
       loss +
-      " and loss percentage is " +
+      "rs and loss percentage is " +
       lossPercent +
       "%";
   } else if (current > initial) {
     const profit = (current - initial) * quantity;
     const profitPercent = (profit / initial) * 100;
     output.innerText =
-      "your are in loss, current loss is " +
+      "You are in profit, current profit is " +
       profit +
-      " and loss percentage is " +
+      "rs and profit percentage is " +
       profitPercent +
       "%";
   } else {
