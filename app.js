@@ -18,7 +18,7 @@ function submitHandler() {
 function calculateProfitAndLoss(initial, quantity, current) {
   if (initial > current) {
     const loss = (initial - current) * quantity;
-    const lossPercent = (loss / initial) * 100;
+    const lossPercent = (((initial - current) * 100) / initial).toFixed(2);
     output.innerText =
       "You are in loss, current loss is " +
       loss +
@@ -27,7 +27,7 @@ function calculateProfitAndLoss(initial, quantity, current) {
       "%";
   } else if (current > initial) {
     const profit = (current - initial) * quantity;
-    const profitPercent = (profit / initial) * 100;
+    const profitPercent = (((current - initial) * 100) / initial).toFixed(2);
     output.innerText =
       "You are in profit, current profit is " +
       profit +
