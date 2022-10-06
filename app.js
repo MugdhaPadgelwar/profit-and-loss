@@ -9,7 +9,11 @@ function submitHandler() {
   const qtn = Number(stockQuantity.value);
   const curr = Number(currentPrice.value);
   if (ip != "" && qtn != "" && curr != "") {
-    calculateProfitAndLoss(ip, qtn, curr);
+    if (ip >= 0 && qtn >= 0 && curr >= 0) {
+      calculateProfitAndLoss(ip, qtn, curr);
+    } else {
+      output.innerText = "All the inputs should be greater than 0";
+    }
   } else {
     output.innerText = "Please fill all the input fileds";
   }
