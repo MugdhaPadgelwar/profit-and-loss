@@ -8,14 +8,12 @@ function submitHandler() {
   const ip = Number(initialPrice.value);
   const qtn = Number(stockQuantity.value);
   const curr = Number(currentPrice.value);
-  if (ip != "" && qtn != "" && curr != "") {
-    if (ip >= 0 && qtn >= 0 && curr >= 0) {
-      calculateProfitAndLoss(ip, qtn, curr);
-    } else {
-      output.innerText = "All the inputs should be greater than 0";
-    }
+  if (ip == "" || qtn == "" || curr == "") {
+    output.innerText = "Please fill all the input fileds!";
+  } else if (ip <= 0 || qtn <= 0 || curr <= 0) {
+    output.innerText = "All the inputs should be greater than 0!";
   } else {
-    output.innerText = "Please fill all the input fileds";
+    calculateProfitAndLoss(ip, qtn, curr);
   }
 }
 
